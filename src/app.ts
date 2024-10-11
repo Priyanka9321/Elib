@@ -1,12 +1,17 @@
-import express from "express";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import express from 'express'
+import { config } from "./config/config";
+import globalErrorHandler from './middlewares/globalErrorHandler';
 
 const app = express();
 
 // Routes
 // Http methods: GET, POST PUT, PATCH, DELETE
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-app.get("/", (req, res, _next) => {
+app.get("/", (req, res, next) => {
   res.json({ message: "welcome to elib apis" });
 });
+
+// Global error handler
+app.use(globalErrorHandler);
 
 export default app;
