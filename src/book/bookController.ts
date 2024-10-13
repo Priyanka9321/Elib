@@ -7,7 +7,8 @@ const createBook = async (
   res: Response,
   next: NextFunction
 ) => {
-    res.json({ });
+
+    res.json({  });
 };
 
 export { createBook };
